@@ -1,12 +1,11 @@
 <template>
 <div id="page-news">
-     <v-toolbar>
+    <v-toolbar>
         <router-link to="/" style="color:#333;">Website demo</router-link>
-        <router-link to='/news' style="margin-left: 15px;">Tin tức</router-link>
         <v-spacer></v-spacer>
-        <v-btn icon @click="login()">
-           <v-icon>mdi-login</v-icon>
-        </v-btn>    
+        <v-btn icon>
+            <router-link to="/login"><v-icon>mdi-login</v-icon></router-link>
+        </v-btn>
     </v-toolbar>
     <v-container grid-list-xs>
         
@@ -53,6 +52,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-a {color: #333;text-decoration: none}
-</style>

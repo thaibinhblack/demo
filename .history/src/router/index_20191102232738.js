@@ -12,10 +12,6 @@ const routes= [
         component: () => import('@/pages/login.vue')
     },
     {
-        path: '/news',
-        component: () => import('@/pages/blogs.vue')
-    },
-    {
         path: '/news/:id',
         component: () => import('@/pages/news.vue')
     },

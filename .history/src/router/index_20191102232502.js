@@ -12,15 +12,11 @@ const routes= [
         component: () => import('@/pages/login.vue')
     },
     {
-        path: '/news',
-        component: () => import('@/pages/blogs.vue')
-    },
-    {
         path: '/news/:id',
         component: () => import('@/pages/news.vue')
     },
     {
-        path: '/restaurent/:id',
+        path: '/restaurant/:id',
         component: () => import('@/pages/restaurant.vue')
     },
     {

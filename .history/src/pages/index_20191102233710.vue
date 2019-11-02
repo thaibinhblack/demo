@@ -51,6 +51,16 @@ export default {
         }
     },
     methods: {
+        ApiTopic()
+        {
+            this.$http.get("https://softwaredevelopmentproject.azurewebsites.net/api.v2/topics/").then((response) => {
+                this.topics = response.data.results
+                this.topics.push({
+                    id: null,
+                    topic: 'Chưa có chủ đế'
+                })
+            })
+        },
         ApiRestaurant()
         {
             this.$http.get("https://softwaredevelopmentproject.azurewebsites.net/api/restaurant/").then((response) => {
@@ -64,6 +74,7 @@ export default {
     },
     created()
     {
+        this.ApiTopic()
         this.ApiRestaurant()
     }
 }

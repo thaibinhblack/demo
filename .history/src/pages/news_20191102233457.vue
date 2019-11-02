@@ -2,7 +2,7 @@
 <div id="page-news">
      <v-toolbar>
         <router-link to="/" style="color:#333;">Website demo</router-link>
-        <router-link to='/news' style="margin-left: 15px;">Tin tức</router-link>
+        <router-link to='/news'>Tin tức</router-link>
         <v-spacer></v-spacer>
         <v-btn icon @click="login()">
            <v-icon>mdi-login</v-icon>
@@ -53,6 +53,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-a {color: #333;text-decoration: none}
-</style>
