@@ -28,7 +28,7 @@
                 </v-card>
             </v-col>
             <v-col cols="12" sm="12" md="4">
-                <v-card style="padding:15px;">    
+                <v-card style="padding:15pxl">    
                     <v-select
                         :items="topics"
                         v-model="news.topic"
@@ -37,11 +37,11 @@
                         label="Topic"
                         required
                     ></v-select>
-                    <v-form @submit.prevent="addTopic()">
+                    <v-form>
                         <v-text-field
                             name="TOPIC"
                             label="Tên chủ đề"
-                            v-model="topic_new.topic"
+                            v-model="topic_new"
                         ></v-text-field>
                         <v-btn outline color="primary" type="submit">Thêm mới</v-btn>
                     </v-form>
@@ -63,8 +63,7 @@ export default {
     {
         return {
             news: {},
-            topics: [],
-            topic_new: {}
+            topics: []
         }
     },
     methods:
@@ -86,18 +85,6 @@ export default {
                 this.news = {}
             }).catch(() => {
                 alert("Đăng bài thất bại")
-            })
-        },
-        addTopic()
-        {
-            this.axios.post("https://softwaredevelopmentproject.azurewebsites.net/api.v2/topics/",this.topic_new,
-            {
-                headers: {
-                    Authorization: "Bearer " + this.$session.get('token')
-                }
-            }).then(() => {
-                this.ApiTopic()
-                this.topic_new = {}
             })
         }
     },

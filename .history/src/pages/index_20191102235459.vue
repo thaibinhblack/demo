@@ -2,7 +2,6 @@
 <div id="page-main">
     <v-toolbar>
         <router-link to="/" style="color:#333;">GFood </router-link>
-        <router-link to='/products' style="margin-left: 15px">Sản phẩm</router-link>
         <router-link to='/news' style="margin-left: 15px">Tin tức</router-link>
         <v-spacer></v-spacer>
         <v-btn icon @click="login()">

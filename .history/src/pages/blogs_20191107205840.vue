@@ -61,17 +61,9 @@ export default {
     watch: {
         topic(newVal)
         {
-            if(newVal != null)
-            {
-                this.news = this.news_tmp.filter((value,index,array) => {
-                    return array[index].topic == newVal
-                })
-            }   
-            else
-            {
-                this.news = this.news_tmp
-            }
-            
+            this.news = this.news_tmp.filter((value,index,array) => {
+                return array[index].topic == newVal
+            })
         }
     },
     methods: {

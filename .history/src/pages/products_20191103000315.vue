@@ -36,26 +36,14 @@ export default {
     data()
     {
         return {
-            news: [],
-            news_tmp: [],
-            topics: [],
-            topic: null,
-            restaurants: []
-        }
-    },
-    watch: {
-        topic(newVal)
-        {
-            this.news = this.news_tmp.filter((value,index,array) => {
-                return array[index].topic == newVal
-            })
+            products: []
         }
     },
     methods: {
-        ApiRestaurant()
+        ApiProducts()
         {
-            this.$http.get("https://softwaredevelopmentproject.azurewebsites.net/api/restaurant/").then((response) => {
-                this.restaurants = response.data.results
+            this.$http.get("https://softwaredevelopmentproject.azurewebsites.net/api/product/").then((response) => {
+                this.products = response.data.results
             })
         },
         login()
@@ -65,7 +53,7 @@ export default {
     },
     created()
     {
-        this.ApiRestaurant()
+        this.ApiProducts()
     }
 }
 </script>

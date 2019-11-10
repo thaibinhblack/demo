@@ -2,7 +2,6 @@
 <div id="page-main">
     <v-toolbar>
         <router-link to="/" style="color:#333;">GFood </router-link>
-         <router-link to='/products' style="margin-left: 15px">Sản phẩm</router-link>
         <router-link to='/news' style="margin-left: 15px">Tin tức</router-link>
         <v-spacer></v-spacer>
         <v-btn icon @click="login()">
@@ -61,17 +60,9 @@ export default {
     watch: {
         topic(newVal)
         {
-            if(newVal != null)
-            {
-                this.news = this.news_tmp.filter((value,index,array) => {
-                    return array[index].topic == newVal
-                })
-            }   
-            else
-            {
-                this.news = this.news_tmp
-            }
-            
+            this.news = this.news_tmp.filter((value,index,array) => {
+                return array[index].topic == newVal
+            })
         }
     },
     methods: {
@@ -81,7 +72,7 @@ export default {
                 this.topics = response.data.results
                 this.topics.push({
                     id: null,
-                    topic: 'Tất cả chủ đề'
+                    topic: 'Chưa có chủ đế'
                 })
             })
         },

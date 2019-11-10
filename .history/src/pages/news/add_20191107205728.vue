@@ -90,12 +90,7 @@ export default {
         },
         addTopic()
         {
-            this.axios.post("https://softwaredevelopmentproject.azurewebsites.net/api.v2/topics/",this.topic_new,
-            {
-                headers: {
-                    Authorization: "Bearer " + this.$session.get('token')
-                }
-            }).then(() => {
+            this.axios.post("https://softwaredevelopmentproject.azurewebsites.net/api.v2/topics/",this.topic_new).then(() => {
                 this.ApiTopic()
                 this.topic_new = {}
             })

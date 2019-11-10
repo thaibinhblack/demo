@@ -11,7 +11,7 @@
     </v-toolbar>
     <v-container grid-list-xs>
         <v-row>
-            <v-col cols="12" sm="6" md="4" lg="3" v-for="(restaurant,index) in restaurants" :key="index">
+            <v-col cols="12" sm="6" md="4" lg="3" v-for="(product,index) in products" :key="index">
                 <v-card>
                     <router-link :to="'/restaurent/'+restaurant.id">
                         <v-card-text>
@@ -36,26 +36,14 @@ export default {
     data()
     {
         return {
-            news: [],
-            news_tmp: [],
-            topics: [],
-            topic: null,
-            restaurants: []
-        }
-    },
-    watch: {
-        topic(newVal)
-        {
-            this.news = this.news_tmp.filter((value,index,array) => {
-                return array[index].topic == newVal
-            })
+            products: []
         }
     },
     methods: {
-        ApiRestaurant()
+        ApiProducts()
         {
-            this.$http.get("https://softwaredevelopmentproject.azurewebsites.net/api/restaurant/").then((response) => {
-                this.restaurants = response.data.results
+            this.$http.get("https://softwaredevelopmentproject.azurewebsites.net/api/product/").then((response) => {
+                this.products = response.data.results
             })
         },
         login()
@@ -65,7 +53,7 @@ export default {
     },
     created()
     {
-        this.ApiRestaurant()
+        this.ApiProducts()
     }
 }
 </script>
